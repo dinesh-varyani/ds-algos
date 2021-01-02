@@ -88,6 +88,30 @@ public class BinaryTree {
 		System.out.print(root.data + " ");
 	}
 
+	public void postOrder(){
+		TreeNode current = root;
+		Stack<TreeNode> stack = new Stack<>();
+
+		while(current != null || !stack.isEmpty()){
+			if(current != null){
+				stack.push(current);
+				current = current.left;
+			} else {
+				TreeNode temp = stack.peek().right;
+				if(temp == null){
+					temp = stack.pop();
+					System.out.print(temp.data + " ");
+					while(!stack.isEmpty() && temp == stack.peek().right){
+						temp = stack.pop();
+						System.out.print(temp.data + " ");
+					}
+				} else {
+					current = temp;
+				}
+			}
+		}
+	}
+
 
 	public void levelOrder() {
 		if(root == null) {
@@ -107,6 +131,31 @@ public class BinaryTree {
 				queue.offer(temp.right);
 			}
 		}
+	}
+
+	public int findMax(){
+		return findMax(root);
+	}
+
+	public int findMax(TreeNode root){
+		if(root == null){
+			return Integer.MIN_VALUE;
+		}
+
+		int result = root.data;
+		int left = findMax(root.left);
+		int right = findMax(root.right);
+
+		if(left > result){
+			result = left;
+		}
+
+		if(right > result){
+			result = right;
+		}
+
+		return result;
+
 	}
 	
 	public void createBinaryTree() {
@@ -130,6 +179,6 @@ public class BinaryTree {
 	public static void main(String[] args) {
 		BinaryTree bt = new BinaryTree();
 		bt.createBinaryTree();
-		bt.levelOrder();
+		bt.postOrder();
 	}
 }
