@@ -1,5 +1,6 @@
 package com.hubberspot.dsalgo.array;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,21 +55,31 @@ public class ArrayUtil {
         throw new IllegalArgumentException("Two numbers not found");
     }
 
-    public void arrayDemo() {
-        int[] myArray = new int[5]; // default values // 0 1 2 3 4
-        // printArray(myArray);
-        myArray[0] = 5;
-        myArray[1] = 1;
-        myArray[2] = 8;
-        myArray[3] = 2;
-        myArray[4] = 10;
-        myArray[2] = 9;
-        printArray(myArray);
-        System.out.println(myArray.length);
-        System.out.println(myArray[myArray.length - 1]);
+    public static int[] twoSumII(int[] arr, int target) {
+        // Sorting and Two Pointer
+        Arrays.sort(arr); // 0 2 6 7 10 11
+        int left = 0;
+        int right = arr.length - 1;
+        int[] result = new int[2];
+        while(left < right){
+            int sum = arr[left] + arr[right];
+            if(sum == target){
+                result[0] = arr[left];
+                result[1] = arr[right];
+                return result;
+            } else if(sum < target){
+                left++;
+            } else {
+                right--;
+            }
+        }
+        return new int[0];
+    }
 
-        int[] arr = {5, 1, 8, 10};
-        printArray(arr);
+    public void arrayDemo() {
+        int[] arr = {11, 2, 0, 10, 7, 6};
+        int[] result = twoSumII(arr, 9);
+        printArray(result);
     }
 
     public static void main(String[] args) {
