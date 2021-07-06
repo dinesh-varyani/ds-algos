@@ -76,10 +76,39 @@ public class ArrayUtil {
         return new int[0];
     }
 
+    public static int[] sortedSquares(int[] arr){
+        // Two pointer technique
+        int n = arr.length;
+        int i = 0;
+        int j = n - 1;
+        int[] result = new int[n];
+
+        // {-4, -1, 0, 3} -> {0, 1, 9, 16}
+
+        for(int k = n - 1; k >= 0; k--){
+            if(Math.abs(arr[i]) > Math.abs(arr[j])){
+                result[k] = arr[i] * arr[i];
+                i++;
+            } else {
+                result[k] = arr[j] * arr[j];
+                j--;
+            }
+        }
+        return result;
+    }
+
+    public static int findMissingNumber(int[] arr){
+        int n = arr.length + 1;
+        int sum = n * (n + 1) / 2;
+        for(int num : arr){
+            sum = sum - num;
+        }
+        return sum;
+    }
+
     public void arrayDemo() {
-        int[] arr = {11, 2, 0, 10, 7, 6};
-        int[] result = twoSumII(arr, 9);
-        printArray(result);
+        int[] arr = {1, 3, 6, 8, 2, 4, 7};
+        System.out.println(findMissingNumber(arr));
     }
 
     public static void main(String[] args) {

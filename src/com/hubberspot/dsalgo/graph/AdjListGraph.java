@@ -78,12 +78,33 @@ public class AdjListGraph {
 		}
 	}
 
+	public void dfs(){
+		boolean[] visited = new boolean[V];
+		for(int v = 0; v < V; v++){
+			if(!visited[v]){
+				dfs(v, visited);
+			}
+		}
+	}
+
+	private void dfs(int v, boolean[] visited) {
+		visited[v] = true;
+		System.out.print(v + " ");
+		for(int w : adj[v]){
+			if(!visited[w]){
+				dfs(w, visited);
+			}
+		}
+	}
+
 	public static void main(String[] args) {
-		AdjListGraph g = new AdjListGraph(4);
+		AdjListGraph g = new AdjListGraph(5);
 		g.addEdge(0, 1);
 		g.addEdge(1, 2);
 		g.addEdge(2, 3);
 		g.addEdge(3, 0);
+		// 4
 		System.out.println(g);
+		g.dfs();
 	}
 }
