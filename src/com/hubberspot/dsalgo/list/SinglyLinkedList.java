@@ -21,6 +21,7 @@ public class SinglyLinkedList {
 			current = current.next;
 		}
 		System.out.print("null");
+		System.out.println();
 	}
 
 	public int length() {
@@ -327,25 +328,70 @@ public class SinglyLinkedList {
 		sixth.next = third;
 	}
 
-	public static void main(String[] args) {
-		SinglyLinkedList sll = new SinglyLinkedList();
-		// sll.createALoopInLinkedList();
-		// System.out.println(sll.containsLoop());
-		// System.out.println(sll.startNodeInALoop().data);
-		// sll.removeLoop();
+	public static ListNode merge(ListNode a, ListNode b){
+		// a --> 1 --> 3 --> 5 --> null
+		// b --> 2 --> 4 --> 6 --> null
+		// result --> 1 --> 2 --> 3 --> 4 --> 5 --> 6 --> null
+		ListNode dummy = new ListNode(0);
+		ListNode tail = dummy;
+		while(a != null && b != null){
+			if(a.data <= b.data){
+				tail.next = a;
+				a = a.next;
+			} else {
+				tail.next = b;
+				b = b.next;
+			}
+			tail = tail.next;
+		}
 
-		sll.insertLast(5);
-		sll.insertLast(7);
-		sll.insertLast(9);
-		sll.insertLast(11);
+		// a --> 1 --> 3 --> null
+		// b --> 2 --> 4 --> 6 --> 7 --> 9 --> 10 --> null
+		// result --> 1 --> 2 --> 3 --> 4 --> 6 --> 7 --> 9 --> 10 --> null
 
-		sll.deleteLast();
-		sll.deleteLast();
-		sll.deleteLast();
-		System.out.println(sll.deleteLast().data);
+		if(a == null){
+			tail.next = b;
+		} else {
+			tail.next = a;
+		}
 
-		sll.display();
-
-
+		return dummy.next;
 	}
+
+	public static void main(String[] args) {
+		SinglyLinkedList sll1 = new SinglyLinkedList();
+		sll1.insertLast(1);
+		sll1.insertLast(4);
+		sll1.insertLast(8);
+
+		SinglyLinkedList sll2 = new SinglyLinkedList();
+		sll2.insertLast(3);
+		sll2.insertLast(5);
+		sll2.insertLast(8);
+		sll2.insertLast(9);
+		sll2.insertLast(14);
+		sll2.insertLast(18);
+
+		sll1.display();
+		sll2.display();
+
+		SinglyLinkedList result = new SinglyLinkedList();
+		result.head = merge(sll1.head, sll2.head);
+
+		result.display();
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
