@@ -1,5 +1,17 @@
 # ds-algos
 
+<div>
+  <hr>
+  <p>Cracking the GAMAM Technical Interviews Ebook</p>
+  <a href="https://rzp.io/l/cracking-the-gamam-interview">Buy Now</a>
+  <hr>
+  <img src="https://user-images.githubusercontent.com/43245665/206854280-d20458ec-d95b-4e0f-84e0-ff7450956e2c.jpg" width="300" height="560">
+  <hr>
+  <p>Cracking the GAMAM Technical Interviews Ebook</p>
+  <a href="https://rzp.io/l/cracking-the-gamam-interview">Buy Now</a>
+  <hr>
+</div>
+
 Get complete free course on Data Structures and Algorithms at - https://www.youtube.com/playlist?list=PL6Zs6LgrJj3tDXv8a_elC6eT_4R5gfX4d.
 
 Subscribe to the channel for all free courses at - https://www.youtube.com/user/hubberspot?sub_confirmation=1
