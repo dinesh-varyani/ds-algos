@@ -41,8 +41,20 @@ public class Trie {
    }
 
    public boolean search(String word) {
-      return false;
-   }
+        if (word == null) return true;
+
+        TrieNode current = root;
+        word = word.toLowerCase();
+        for (int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
+            int index = c - 'a';
+            if (current.children[index] == null) return false;
+            current = current.children[index];
+        }
+        if (!current.isWord)
+            return false;
+        return true;
+    }
 
    public static void main(String[] args) {
       Trie trie = new Trie();
@@ -51,5 +63,10 @@ public class Trie {
       trie.insert("son");
       trie.insert("so");
       System.out.println("Values inserted successfully !!!");
+      
+      System.out.println("son is in trie : " + trie.search("son"));
+      System.out.println("dog is in trie : " + trie.search("dog"));
+      System.out.println("cat is in trie : " + trie.search("cat"));
+      System.out.println("cate is in trie : " + trie.search("cate"));
    }
 }
