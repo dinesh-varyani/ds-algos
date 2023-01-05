@@ -51,9 +51,7 @@ public class Trie {
             if (current.children[index] == null) return false;
             current = current.children[index];
         }
-        if (!current.isWord)
-            return false;
-        return true;
+        return current.isWord;
     }
 
    public static void main(String[] args) {
