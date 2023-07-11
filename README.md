@@ -1,4 +1,5 @@
 # ds-algos data structures added to youtube playlist java
+https://www.youtube.com/watch?v=ACoLBU0nPAw&list=PL6Zs6LgrJj3v9gBrV7xwiMod-EA3nMjWl
 
 <div>
   <hr>
