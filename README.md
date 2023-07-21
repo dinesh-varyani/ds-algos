@@ -3,12 +3,12 @@
 <div>
   <hr>
   <p>Cracking the GAMAM Technical Interviews Ebook</p>
-  <a href="https://rzp.io/l/cracking-the-gamam-interview">Buy Now</a>
+  <a href="https://topmate.io/dinesh_varyani/108427">Buy Now</a>
   <hr>
   <img src="https://user-images.githubusercontent.com/43245665/206854280-d20458ec-d95b-4e0f-84e0-ff7450956e2c.jpg" width="300" height="560">
   <hr>
   <p>Cracking the GAMAM Technical Interviews Ebook</p>
-  <a href="https://rzp.io/l/cracking-the-gamam-interview">Buy Now</a>
+  <a href="https://topmate.io/dinesh_varyani/108427">Buy Now</a>
   <hr>
 </div>
 
